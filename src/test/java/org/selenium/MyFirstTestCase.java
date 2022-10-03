@@ -3,17 +3,15 @@ package org.selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.selenium.pom.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class MyFirstTestCase {
+public class MyFirstTestCase extends BaseTest {
 
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
         driver.get("https://askomdch.com");
-        driver.manage().window().maximize();
         driver.findElement(By.id("menu-item-1227")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("woocommerce-product-search-field-0")).sendKeys("Blue");
@@ -45,15 +43,11 @@ public class MyFirstTestCase {
                 By.className("woocommerce-notice")).getText(),
                 "Thank you. Your order has been received."
         );
-        driver.quit();
     }
 
     @Test
     public void loginAndCheckoutUsingDirectBankTransfer() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
         driver.get("https://askomdch.com");
-        driver.manage().window().maximize();
         driver.findElement(By.id("menu-item-1227")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("woocommerce-product-search-field-0")).sendKeys("Blue");
@@ -90,6 +84,5 @@ public class MyFirstTestCase {
                         By.className("woocommerce-notice")).getText(),
                 "Thank you. Your order has been received."
         );
-        driver.quit();
     }
 }
