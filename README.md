@@ -6,6 +6,7 @@ Bad practice that are fix:
 
 - Hardcoded test data
 - Hardcoded static Text
+- Hardcoded driver executable path
 - Code duplication
 - Non-Atomic test
 - Non-readable test
