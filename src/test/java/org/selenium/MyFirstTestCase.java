@@ -2,6 +2,8 @@ package org.selenium;
 
 import org.openqa.selenium.By;
 import org.selenium.pom.base.BaseTest;
+import org.selenium.pom.pages.HomePage;
+import org.selenium.pom.pages.StorePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,6 +12,15 @@ public class MyFirstTestCase extends BaseTest {
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException {
         driver.get("https://askomdch.com");
+
+        HomePage homePage = new HomePage(driver);
+        StorePage storePage = homePage.clickStoreMenuLink();
+        storePage.enterTextInSearchField("Blue");
+        storePage.clickSearchBtn();
+        Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “Blue”");
+        storePage.clickAddToCardBtn();
+
+
         driver.findElement(By.id("menu-item-1227")).click();
         Thread.sleep(2000);
         driver.findElement(By.id("woocommerce-product-search-field-0")).sendKeys("Blue");
