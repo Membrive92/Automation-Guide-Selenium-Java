@@ -19,7 +19,7 @@ public class MyFirstTestCase extends BaseTest {
                // enterTextInSearchField("Blue")
                 //.clickSearchBtn();
         Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “Blue”");
-        storePage.clickAddToCardBtn();
+        storePage.clickAddToCardBtn("Blue Shoes");
 
 
         driver.findElement(By.id("menu-item-1227")).click();
