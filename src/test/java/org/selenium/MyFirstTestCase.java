@@ -2,6 +2,7 @@ package org.selenium;
 
 import org.openqa.selenium.By;
 import org.selenium.pom.base.BaseTest;
+import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
 import org.testng.Assert;
@@ -16,31 +17,14 @@ public class MyFirstTestCase extends BaseTest {
         HomePage homePage = new HomePage(driver);
         StorePage storePage = homePage.clickStoreMenuLink();
         storePage.search("blue");
-               // enterTextInSearchField("Blue")
-                //.clickSearchBtn();
         Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “Blue”");
         storePage.clickAddToCardBtn("Blue Shoes");
-
-
-        driver.findElement(By.id("menu-item-1227")).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("woocommerce-product-search-field-0")).sendKeys("Blue");
-        driver.findElement(By.cssSelector("button[value='Search']")).click();
-        Thread.sleep(2000);
-        Assert.assertEquals(
-                driver.findElement(By.cssSelector(".woocommerce-products-header__title.page-title")).getText(),
-                "Search results: “Blue”"
-        );
+        CartPage cartPage = storePage.clickViewCart();
+        Assert.assertEquals(cartPage.getProductName(), "Blue Shoes");
 
-        driver.findElement(By.xpath("//*[@data-product_id='1215']")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//a[@title=\"View cart\"]")).click();
-        Assert.assertEquals(
-                driver.findElement(By.xpath("//*[@data-title=\"Product\"]")).getText(),
-                "Blue Shoes"
-        );
+        CheckoutPage checkoutPage =cartPage.clickCheckoutBtn();
 
-        driver.findElement(By.className("checkout-button")).click();
         driver.findElement(By.id("billing_first_name")).sendKeys("demo");
         driver.findElement(By.id("billing_last_name")).sendKeys("user");
         driver.findElement(By.id("billing_address_1")).sendKeys("San Francisco");
