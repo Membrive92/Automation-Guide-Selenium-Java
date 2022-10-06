@@ -18,6 +18,11 @@ public class StorePage extends BasePage {
         return this;
     }
 
+    public StorePage search(String txt){
+        enterTextInSearchField(txt).clickSearchBtn();
+        return this;
+    }
+
     public StorePage  clickSearchBtn(){
         driver.findElement(searchBtn).click();
         return this;
