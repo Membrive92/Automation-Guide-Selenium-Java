@@ -13,8 +13,14 @@ public class HomePage extends BasePage {
 
     }
 
-    public StorePage navigateToStoreUsingMenu(){
+    public HomePage load(){
+        load("/");
+        return this;
+    }
+
+    public StorePage navigateToStoreUsingMenu() throws InterruptedException {
         driver.findElement(storeMenuLink).click();
+        Thread.sleep(2000);
         return new StorePage((driver));
     }
 }
