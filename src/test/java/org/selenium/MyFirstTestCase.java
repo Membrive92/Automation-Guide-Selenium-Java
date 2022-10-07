@@ -17,23 +17,36 @@ public class MyFirstTestCase extends BaseTest {
 
         HomePage homePage = new HomePage(driver);
         StorePage storePage = homePage.clickStoreMenuLink();
-        storePage.search("blue");
+        Thread.sleep(2000);
+        storePage.search("Blue");
+        Thread.sleep(2000);
         Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “Blue”");
+        
         storePage.clickAddToCardBtn("Blue Shoes");
         Thread.sleep(2000);
         CartPage cartPage = storePage.clickViewCart();
         Assert.assertEquals(cartPage.getProductName(), "Blue Shoes");
 
-        CheckoutPage checkoutPage = cartPage.clickCheckoutBtn();
-        checkoutPage.
+        CheckoutPage checkoutPage = cartPage.checkout();
+        checkoutPage.fillCheckoutForm(
+                "demo",
+                "user",
+                "New york",
+                "new york",
+                "94199",
+                "fkuser@gmail.com"
+        );
+
+       /* checkoutPage.
                 enterFirstName("demo").
                 enterLastName("user").
                 enterAddressLineOne("New york").
                 enterCity("new york").
                 enterPostCode("94199").
                 enterEmail("memb@gmail.com").
-                placeOrder();
-        Thread.sleep(2000);
+                placeOrder();*/
+
+        Thread.sleep(5000);
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
         Thread.sleep(2000);
     }

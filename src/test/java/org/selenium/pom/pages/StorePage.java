@@ -35,7 +35,7 @@ public class StorePage extends BasePage {
 
 
     private By getAddToCartBtnElement(String productName){
-        return By.cssSelector("a[aria-label='Add “"+ productName + "” to your cart]");
+        return By.xpath("//*[@aria-label='Add “"+ productName +"” to your cart']");
     }
     public StorePage  clickAddToCardBtn(String productName){
         By addToCartBTN = getAddToCartBtnElement(productName);

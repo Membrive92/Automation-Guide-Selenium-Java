@@ -6,7 +6,7 @@ import org.selenium.pom.base.BasePage;
 
 public class CartPage extends BasePage {
     private final By productName = By.cssSelector("td[class='product-name'] a");
-    private final By checkoutBtn = By.cssSelector("checkout-button");
+    private final By checkoutBtn = By.cssSelector(".checkout-button");
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -15,7 +15,7 @@ public class CartPage extends BasePage {
         return driver.findElement(productName).getText();
     }
 
-    public CheckoutPage clickCheckoutBtn(){
+    public CheckoutPage checkout(){
         driver.findElement(checkoutBtn).click();
         return new CheckoutPage(driver);
     }

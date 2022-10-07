@@ -11,7 +11,7 @@ public class CheckoutPage extends BasePage {
     private final By billingCityField = By.id("billing_city");
     private final By billingPostCodeField = By.id("billing_postcode");
     private final By billingEmailField = By.id("billing_email");
-    private final By placeOrderBtn = By.id("billing_first_name");
+    private final By placeOrderBtn = By.xpath("//*[@id='place_order']");
     private final By successNotice = By.cssSelector(".woocommerce-notice");
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -54,5 +54,17 @@ public class CheckoutPage extends BasePage {
 
     public String getNotice(){
        return driver.findElement(successNotice).getText();
+    }
+
+    public CheckoutPage fillCheckoutForm(String firstName, String lastName, String addressLineOne,String city, String postalCode, String email){
+        enterFirstName(firstName);
+        enterLastName(lastName);
+        enterAddressLineOne(addressLineOne);
+        enterCity(city);
+        enterPostCode(postalCode);
+        enterEmail(email);
+        placeOrder();
+
+        return this;
     }
 }
