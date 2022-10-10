@@ -3,6 +3,7 @@ package org.selenium.pom.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.selenium.pom.base.BasePage;
+import org.selenium.pom.objects.BillingAddress;
 
 public class CheckoutPage extends BasePage {
     private final By firstNameField = By.id("billing_first_name");
@@ -57,6 +58,7 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+
     public CheckoutPage placeOrder (){
         driver.findElement(placeOrderBtn).click();
         return this;
@@ -92,14 +94,12 @@ public class CheckoutPage extends BasePage {
                 .clickLoginBtn();
     }
 
-    public CheckoutPage fillCheckoutForm(String firstName, String lastName, String addressLineOne,String city, String postalCode, String email){
-       return enterFirstName(firstName).
-               enterLastName(lastName).
-               enterAddressLineOne(addressLineOne).
-               enterCity(city).
-               enterPostCode(postalCode).
-               enterEmail(email).
-               placeOrder();
-
+    public CheckoutPage setBillingAddress (BillingAddress billingAddress){
+       return enterFirstName(billingAddress.getFirstName()).
+               enterLastName(billingAddress.getLastName()).
+               enterAddressLineOne(billingAddress.getAddressLineOne()).
+               enterCity(billingAddress.getCity()).
+               enterPostCode(billingAddress.getPostalCode()).
+               enterEmail(billingAddress.getEmail());
     }
 }
