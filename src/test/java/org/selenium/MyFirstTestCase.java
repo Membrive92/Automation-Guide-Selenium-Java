@@ -17,9 +17,7 @@ import java.io.InputStream;
 public class MyFirstTestCase extends BaseTest {
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException, IOException {
-        BillingAddress billingAddress = new BillingAddress();
-        InputStream is = getClass().getClassLoader().getResourceAsStream("myBillingAddress.json");
-        billingAddress = JacksonUtils.deserializeJson(is, billingAddress);
+      BillingAddress  billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
 
         StorePage storePage = new HomePage(driver).
                 load().
