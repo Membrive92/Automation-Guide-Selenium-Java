@@ -3,6 +3,7 @@ package org.selenium;
 
 import org.selenium.pom.base.BaseTest;
 import org.selenium.pom.objects.BillingAddress;
+import org.selenium.pom.objects.Product;
 import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.CheckoutPage;
 import org.selenium.pom.pages.HomePage;
@@ -18,6 +19,7 @@ public class MyFirstTestCase extends BaseTest {
     @Test
     public void guestCheckoutUsingDirectBankTransfer() throws InterruptedException, IOException {
       BillingAddress  billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
+      Product product = new Product(1215);
 
         StorePage storePage = new HomePage(driver).
                 load().
@@ -25,10 +27,10 @@ public class MyFirstTestCase extends BaseTest {
                 search("Blue");
         Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “Blue”");
         
-        storePage.clickAddToCardBtn("Blue Shoes");
+        storePage.clickAddToCardBtn(product.getName());
         Thread.sleep(2000);
         CartPage cartPage = storePage.clickViewCart();
-        Assert.assertEquals(cartPage.getProductName(), "Blue Shoes");
+        Assert.assertEquals(cartPage.getProductName(), product.getName());
 
         CheckoutPage checkoutPage = cartPage.
                 checkout().
