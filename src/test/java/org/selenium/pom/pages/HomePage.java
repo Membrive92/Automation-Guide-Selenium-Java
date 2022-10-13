@@ -18,9 +18,8 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public StorePage navigateToStoreUsingMenu() throws InterruptedException {
+    public StorePage navigateToStoreUsingMenu() {
         driver.findElement(storeMenuLink).click();
-        Thread.sleep(2000);
         return new StorePage((driver));
     }
 }
