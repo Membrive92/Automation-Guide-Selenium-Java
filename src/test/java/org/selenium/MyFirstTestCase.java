@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MyFirstTestCase extends BaseTest {
     @Test
-    public void guestCheckoutUsingDirectBankTransfer() throws IOException {
+    public void guestCheckoutUsingDirectBankTransfer() throws IOException, InterruptedException {
       String searchFor = "Blue";
       BillingAddress  billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
       Product product = new Product(1215);
@@ -26,7 +26,7 @@ public class MyFirstTestCase extends BaseTest {
                 load().
                 navigateToStoreUsingMenu().
                 search(searchFor);
-        //Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “"+ searchFor +"”");
+        Assert.assertEquals(storePage.getSearchResultTitle(), "Search results: “"+ searchFor +"”");
         
         storePage.clickAddToCardBtn(product.getName());
         CartPage cartPage = storePage.clickViewCart();
