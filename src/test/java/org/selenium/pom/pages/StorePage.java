@@ -19,8 +19,7 @@ public class StorePage extends BasePage {
         return this;
     }
 
-    public StorePage search(String txt) throws InterruptedException {
-        Thread.sleep(2000);
+    public StorePage search(String txt){
         enterTextInSearchField(txt).clickSearchBtn();
         return this;
     }
@@ -38,7 +37,8 @@ public class StorePage extends BasePage {
     private By getAddToCartBtnElement(String productName){
         return By.xpath("//*[@aria-label='Add “"+ productName +"” to your cart']");
     }
-    public StorePage  clickAddToCardBtn(String productName){
+    public StorePage  clickAddToCardBtn(String productName) throws InterruptedException {
+        Thread.sleep(2000);
         By addToCartBTN = getAddToCartBtnElement(productName);
         driver.findElement(addToCartBTN).click();
         return this;

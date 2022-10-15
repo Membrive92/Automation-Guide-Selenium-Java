@@ -66,14 +66,6 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage placeOrder (){
-        List<WebElement> overlays = driver.findElements(overlay);
-        System.out.println("OVERLAY SIZE " + overlays.size());
-        if (overlays.size() > 0){
-            new WebDriverWait(driver, Duration.ofSeconds(15)).until(
-                    ExpectedConditions.invisibilityOfAllElements(overlays)
-            );
-            System.out.println("OVERLAYS ARE INVISIBLE");
-        }
         driver.findElement(placeOrderBtn).click();
         return this;
     }
@@ -83,6 +75,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage clickHereToLoginLink(){
+        waitForOverlaysToDisappear(overlay);
         driver.findElement(clickHereToLoginLink).click();
         return this;
     }
