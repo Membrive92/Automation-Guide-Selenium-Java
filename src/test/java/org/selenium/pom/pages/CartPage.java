@@ -8,8 +8,13 @@ import org.selenium.pom.base.BasePage;
 public class CartPage extends BasePage {
     private final By productName = By.cssSelector("td[class='product-name'] a");
     private final By checkoutBtn = By.cssSelector(".checkout-button");
+    private final By cartHeading = By.cssSelector(".has-text-align-center");
     public CartPage(WebDriver driver) {
         super(driver);
+    }
+
+    public Boolean isLoaded(){
+       return wait.until(ExpectedConditions.textToBe(cartHeading, "Cart"));
     }
 
     public String getProductName(){

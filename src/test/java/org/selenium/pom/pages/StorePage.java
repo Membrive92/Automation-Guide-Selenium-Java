@@ -21,6 +21,10 @@ public class StorePage extends BasePage {
         return this;
     }
 
+    public Boolean isLoaded(){
+        return wait.until(ExpectedConditions.urlContains("/store"));
+    }
+
     public StorePage search(String txt){
         enterTextInSearchField(txt).clickSearchBtn();
         return this;
