@@ -30,68 +30,83 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage enterFirstName(String firstName){
-        driver.findElement(firstNameField).clear();
-        driver.findElement(firstNameField).sendKeys(firstName);
+        // Using method defined in the class
+        WebElement elementVisible = waitForElementToBeVisible(firstNameField);
+        elementVisible.clear();
+        elementVisible.sendKeys(firstName);
         return this;
     }
 
     public CheckoutPage enterLastName(String lastName){
-        driver.findElement(lastNameField).clear();
-        driver.findElement(lastNameField).sendKeys(lastName);
+        //Using ExpectedConditions without defined method
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameField));
+        elementVisible.clear();
+        elementVisible.sendKeys(lastName);
         return this;
     }
 
     public CheckoutPage enterAddressLineOne(String addressLineOne){
-        driver.findElement(addressLineOneField).clear();
-        driver.findElement(addressLineOneField).sendKeys(addressLineOne);
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(addressLineOneField));
+        elementVisible.clear();
+        elementVisible.sendKeys(addressLineOne);
         return this;
     }
 
     public CheckoutPage enterCity(String city){
-        driver.findElement(billingCityField).clear();
-        driver.findElement(billingCityField).sendKeys(city);
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(billingCityField));
+        elementVisible.clear();
+        elementVisible.sendKeys(city);
         return this;
     }
 
     public CheckoutPage enterPostCode(String postCode){
-        driver.findElement(billingPostCodeField).clear();
-        driver.findElement(billingPostCodeField).sendKeys(postCode);
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(billingPostCodeField));
+        elementVisible.clear();
+        elementVisible.sendKeys(postCode);
         return this;
     }
 
     public CheckoutPage enterEmail(String email){
-        driver.findElement(billingEmailField).clear();
-        driver.findElement(billingEmailField).sendKeys(email);
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(billingEmailField));
+        elementVisible.clear();
+        elementVisible.sendKeys(email);
         return this;
     }
 
     public CheckoutPage placeOrder (){
-        driver.findElement(placeOrderBtn).click();
+       waitForOverlaysToDisappear(overlay);
+       driver.findElement(placeOrderBtn).click();
         return this;
     }
 
     public String getNotice(){
-       return driver.findElement(successNotice).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(successNotice)).getText();
     }
 
     public CheckoutPage clickHereToLoginLink(){
         waitForOverlaysToDisappear(overlay);
-        driver.findElement(clickHereToLoginLink).click();
+        WebElement elementVisible = wait.until(ExpectedConditions.elementToBeClickable(clickHereToLoginLink));
+        elementVisible.click();
         return this;
     }
 
     public CheckoutPage enterUserName(String username){
-        driver.findElement(userNameField).sendKeys(username);
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(userNameField));
+        elementVisible.clear();
+        elementVisible.sendKeys(username);
         return this;
     }
 
     public CheckoutPage enterPassword(String password){
-        driver.findElement(passwordField).sendKeys(password);
+        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+        elementVisible.clear();
+        elementVisible.sendKeys(password);
         return this;
     }
 
     public CheckoutPage clickLoginBtn(){
-        driver.findElement(loginBtn).click();
+        WebElement elementVisible = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+        elementVisible.click();
         return this;
     }
 
