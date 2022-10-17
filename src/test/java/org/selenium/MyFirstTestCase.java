@@ -37,6 +37,7 @@ public class MyFirstTestCase extends BaseTest {
         CheckoutPage checkoutPage = cartPage.
                 checkout().
                 setBillingAddress(billingAddress).
+                selectDirectBankTransfer().
                 placeOrder();
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
     }
@@ -64,6 +65,7 @@ public class MyFirstTestCase extends BaseTest {
            checkoutPage.
                    login(user.getUsername(), user.getPassword()).
                    setBillingAddress(billingAddress).
+                   selectDirectBankTransfer().
                    placeOrder();
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
     }
