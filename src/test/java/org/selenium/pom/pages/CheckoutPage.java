@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.selenium.pom.base.BasePage;
 import org.selenium.pom.objects.BillingAddress;
@@ -25,6 +26,8 @@ public class CheckoutPage extends BasePage {
     private final  By passwordField = By.id("password");
     private final  By loginBtn = By.name("login");
     private final By overlay = By.cssSelector(".blockUI.blockOverlay");
+    private final By countryDropDown = By.id("billing_country");
+    private final By stateDropDown = By.id("billing_state");
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
@@ -45,6 +48,12 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    public CheckoutPage selectCountry(String countryName){
+        Select select = new Select(driver.findElement(countryDropDown));
+        select.selectByVisibleText(countryName);
+        return this;
+    }
+
     public CheckoutPage enterAddressLineOne(String addressLineOne){
         WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(addressLineOneField));
         elementVisible.clear();
@@ -59,6 +68,11 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    public CheckoutPage selectState(String stateName){
+        Select select = new Select(driver.findElement(stateDropDown));
+        select.selectByVisibleText(stateName);
+        return this;
+    }
     public CheckoutPage enterPostCode(String postCode){
         WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(billingPostCodeField));
         elementVisible.clear();
@@ -119,8 +133,10 @@ public class CheckoutPage extends BasePage {
     public CheckoutPage setBillingAddress (BillingAddress billingAddress){
        return enterFirstName(billingAddress.getFirstName()).
                enterLastName(billingAddress.getLastName()).
+               selectCountry(billingAddress.getCountry()).
                enterAddressLineOne(billingAddress.getAddressLineOne()).
                enterCity(billingAddress.getCity()).
+               selectState(billingAddress.getState()).
                enterPostCode(billingAddress.getPostalCode()).
                enterEmail(billingAddress.getEmail());
     }

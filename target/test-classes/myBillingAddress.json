@@ -1,8 +1,10 @@
 {
   "firstName": "demo",
   "lastName": "user",
+  "country": "Greece",
   "addressLineOne": "San Francisco",
   "city": "San francisco",
+  "state": "Attica",
   "postalCode": "94188",
   "email": "fkuser@gmail.com"
 }

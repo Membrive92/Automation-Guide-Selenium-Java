@@ -10,14 +10,14 @@ import java.time.Duration;
 public class BaseTest {
     protected WebDriver driver;
 
-
     @BeforeMethod
     public void startDriver(){
         driver = new DriverManager().initializerDriver();
     }
 
     @AfterMethod
-    public void quitDriver(){
+    public void quitDriver() throws InterruptedException {
+        Thread.sleep(100);
         driver.quit();
     }
 }
