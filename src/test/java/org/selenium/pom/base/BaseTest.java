@@ -17,6 +17,7 @@ public class BaseTest {
 
     @AfterMethod
     public void quitDriver() throws InterruptedException {
+        //fix connection reset error
         Thread.sleep(100);
         driver.quit();
     }
