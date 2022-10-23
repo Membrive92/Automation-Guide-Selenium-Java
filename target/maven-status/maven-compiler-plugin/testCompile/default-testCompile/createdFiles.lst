@@ -6,7 +6,9 @@ org\selenium\pom\pages\HomePage.class
 org\selenium\pom\pages\CartPage.class
 org\selenium\pom\pages\StorePage.class
 org\selenium\pom\utils\JacksonUtils.class
+org\selenium\pom\constants\BrowserType.class
 org\selenium\pom\objects\User.class
 org\selenium\pom\objects\BillingAddress.class
 org\selenium\pom\pages\CheckoutPage.class
 org\selenium\pom\tests\MyFirstTestCase.class
+org\selenium\pom\factory\DriverManager$1.class
