@@ -7,12 +7,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
 
-    public WebDriver initializerDriver(){
-     //   WebDriverManager.chromedriver().cachePath("src/test/resources/Drivers").setup();
-        WebDriverManager.firefoxdriver().cachePath("src/test/resources/Drivers").setup();
-       // System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
-       // WebDriver driver = new ChromeDriver();
-        WebDriver driver = new FirefoxDriver();
+    public WebDriver initializerDriver() {
+        WebDriver driver;
+        String browser = System.getProperty("browser");
+        switch (browser) {
+            case "Chrome" -> {
+                WebDriverManager.chromedriver().cachePath("Drivers").setup();
+                driver = new ChromeDriver();
+            }
+            case "Firefox" -> {
+                WebDriverManager.firefoxdriver().cachePath("Drivers").setup();
+                driver = new FirefoxDriver();
+            }
+            default -> throw new IllegalStateException("Invalid browser name: " + browser);
+        }
         driver.manage().window().maximize();
         return driver;
     }
