@@ -2,9 +2,9 @@
   "firstName": "demo",
   "lastName": "user",
   "country": "Greece",
-  "addressLineOne": "San Francisco",
-  "city": "San francisco",
+  "addressLineOne": "Megara",
+  "city": "Megara",
   "state": "Attica",
-  "postalCode": "94188",
+  "postalCode": "411001",
   "email": "fkuser@gmail.com"
 }

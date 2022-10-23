@@ -1,6 +1,7 @@
 package org.selenium.pom.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,6 +29,8 @@ public class CheckoutPage extends BasePage {
     private final By overlay = By.cssSelector(".blockUI.blockOverlay");
     private final By countryDropDown = By.id("billing_country");
     private final By stateDropDown = By.id("billing_state");
+    private final By alternateCountryDropDown = By.id("select2-billing_country-container");
+    private final By alternateStateDropDown = By.id("select2-billing_state-container");
     private final By directBankTransferRadioBtn = By.id("payment_method_bacs");
 
     public CheckoutPage(WebDriver driver) {
@@ -51,8 +54,17 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage selectCountry(String countryName){
-        Select select = new Select(driver.findElement(countryDropDown));
-        select.selectByVisibleText(countryName);
+
+       /* Chrome option
+        Select select = new Select(wait.until(ExpectedConditions.elementToBeClickable(countryDropDown)));
+        select.selectByVisibleText(countryName); */
+
+        //firefox option because there is an open bug in firefox
+        wait.until((ExpectedConditions.elementToBeClickable(alternateCountryDropDown))).click();
+        WebElement country = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//li[text()='"+ countryName +"']")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", country);
+        country.click();
         return this;
     }
 
@@ -64,15 +76,24 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage enterCity(String city){
-        WebElement elementVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(billingCityField));
+        WebElement elementVisible = wait.until(ExpectedConditions.elementToBeClickable(billingCityField));
         elementVisible.clear();
         elementVisible.sendKeys(city);
         return this;
     }
 
     public CheckoutPage selectState(String stateName){
-        Select select = new Select(driver.findElement(stateDropDown));
-        select.selectByVisibleText(stateName);
+     /*   Chrome option
+       Select select = new Select(driver.findElement(stateDropDown));
+        select.selectByVisibleText(stateName);*/
+
+
+        // firefox option
+        wait.until((ExpectedConditions.elementToBeClickable(alternateStateDropDown))).click();
+        WebElement state = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//li[text()='"+ stateName +"']")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", state);
+        state.click();
         return this;
     }
     public CheckoutPage enterPostCode(String postCode){
