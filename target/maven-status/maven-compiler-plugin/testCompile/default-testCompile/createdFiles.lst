@@ -11,4 +11,3 @@ org\selenium\pom\objects\User.class
 org\selenium\pom\objects\BillingAddress.class
 org\selenium\pom\pages\CheckoutPage.class
 org\selenium\pom\tests\MyFirstTestCase.class
-org\selenium\pom\factory\DriverManager$1.class
