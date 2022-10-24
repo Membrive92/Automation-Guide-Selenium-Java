@@ -7,4 +7,10 @@
             <class name="org.selenium.pom.tests.MyFirstTestCase"/>
         </classes>
     </test>
+    <test name="Firefox"   >
+        <parameter name="browser" value="FIREFOX"/>
+        <classes>
+            <class name="org.selenium.pom.tests.MyFirstTestCase"/>
+        </classes>
+    </test>
 </suite>
