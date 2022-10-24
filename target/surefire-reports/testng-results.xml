@@ -2,32 +2,46 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-23T16:30:26 CEST" name="Command line suite" finished-at="2022-10-23T16:30:59 CEST" duration-ms="32617">
+  <suite started-at="2022-10-24T20:40:36 CEST" name="Command line suite" finished-at="2022-10-24T20:40:57 CEST" duration-ms="21169">
     <groups>
     </groups>
-    <test started-at="2022-10-23T16:30:26 CEST" name="Command line test" finished-at="2022-10-23T16:30:59 CEST" duration-ms="32617">
+    <test started-at="2022-10-24T20:40:36 CEST" name="Command line test" finished-at="2022-10-24T20:40:57 CEST" duration-ms="21169">
       <class name="org.selenium.pom.tests.MyFirstTestCase">
-        <test-method is-config="true" signature="startDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@780cb77]" started-at="2022-10-23T16:30:26 CEST" name="startDriver" finished-at="2022-10-23T16:30:30 CEST" duration-ms="3633" status="PASS">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@17c1bced]" started-at="2022-10-24T20:40:36 CEST" name="startDriver" finished-at="2022-10-24T20:40:38 CEST" duration-ms="2008" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CHROME]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="guestCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@780cb77]" started-at="2022-10-23T16:30:30 CEST" name="guestCheckoutUsingDirectBankTransfer" finished-at="2022-10-23T16:30:42 CEST" duration-ms="11663" status="PASS">
+        <test-method signature="guestCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@17c1bced]" started-at="2022-10-24T20:40:38 CEST" name="guestCheckoutUsingDirectBankTransfer" finished-at="2022-10-24T20:40:46 CEST" duration-ms="7960" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guestCheckoutUsingDirectBankTransfer -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@780cb77]" started-at="2022-10-23T16:30:42 CEST" name="quitDriver" finished-at="2022-10-23T16:30:42 CEST" duration-ms="852" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@17c1bced]" started-at="2022-10-24T20:40:46 CEST" name="quitDriver" finished-at="2022-10-24T20:40:46 CEST" duration-ms="303" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="startDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@780cb77]" started-at="2022-10-23T16:30:42 CEST" name="startDriver" finished-at="2022-10-23T16:30:45 CEST" duration-ms="2377" status="PASS">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@17c1bced]" started-at="2022-10-24T20:40:46 CEST" name="startDriver" finished-at="2022-10-24T20:40:47 CEST" duration-ms="764" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CHROME]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="loginAndCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@780cb77]" started-at="2022-10-23T16:30:45 CEST" name="loginAndCheckoutUsingDirectBankTransfer" finished-at="2022-10-23T16:30:58 CEST" duration-ms="13339" status="PASS">
+        <test-method signature="loginAndCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@17c1bced]" started-at="2022-10-24T20:40:47 CEST" name="loginAndCheckoutUsingDirectBankTransfer" finished-at="2022-10-24T20:40:57 CEST" duration-ms="9758" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndCheckoutUsingDirectBankTransfer -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@780cb77]" started-at="2022-10-23T16:30:58 CEST" name="quitDriver" finished-at="2022-10-23T16:30:59 CEST" duration-ms="719" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@17c1bced]" started-at="2022-10-24T20:40:57 CEST" name="quitDriver" finished-at="2022-10-24T20:40:57 CEST" duration-ms="340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->

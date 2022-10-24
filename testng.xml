@@ -5,8 +5,9 @@
      <!--   <packages>
             <package name="org.selenium.pom.tests" />
         </packages> -->
+        <parameter name="browser" value="FIREFOX"/>
         <classes>
-            <class name="org.selenium.pom.tests.MyFirstTestCase"></class>
+            <class name="org.selenium.pom.tests.MyFirstTestCase"/>
         </classes>
         
     </test>
