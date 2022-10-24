@@ -46,6 +46,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_ff.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
