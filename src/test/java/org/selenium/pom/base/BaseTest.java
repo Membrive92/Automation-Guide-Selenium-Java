@@ -10,18 +10,29 @@ import java.io.IOException;
 import java.time.Duration;
 
 public class BaseTest {
-    protected WebDriver driver;
+    private ThreadLocal <WebDriver> driver = new ThreadLocal<>();
 
+    private void setDriver(WebDriver driver){
+        this.driver.set(driver);
+        System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
+                "DRIVER = " + getDriver());
+    }
+
+    protected WebDriver getDriver(){
+      return this.driver.get();
+    }
     @Parameters("browser")
     @BeforeMethod
     public void startDriver(String browser){
-        driver = new DriverManager().initializerDriver(browser);
+       setDriver(new DriverManager().initializerDriver(browser));
     }
 
     @AfterMethod
     public void quitDriver() throws InterruptedException {
         //fix connection reset error
         Thread.sleep(100);
-        driver.quit();
+        System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
+                "DRIVER = " + getDriver());
+        getDriver().quit();
     }
 }
