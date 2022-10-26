@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-24T20:59:06 CEST" name="Suite1 (0)" finished-at="2022-10-24T20:59:34 CEST" duration-ms="28029">
+  <suite started-at="2022-10-26T22:08:11 CEST" name="Surefire suite" finished-at="2022-10-26T22:08:30 CEST" duration-ms="18735">
     <groups>
     </groups>
-    <test started-at="2022-10-24T20:59:06 CEST" name="Firefox" finished-at="2022-10-24T20:59:34 CEST" duration-ms="28029">
+    <test started-at="2022-10-26T22:08:11 CEST" name="Surefire test" finished-at="2022-10-26T22:08:30 CEST" duration-ms="18735">
       <class name="org.selenium.pom.tests.MyFirstTestCase">
-        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@36bc55de]" started-at="2022-10-24T20:59:06 CEST" name="startDriver" finished-at="2022-10-24T20:59:08 CEST" duration-ms="2603" status="PASS">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@5c909414]" started-at="2022-10-26T22:08:11 CEST" name="startDriver" finished-at="2022-10-26T22:08:15 CEST" duration-ms="4420" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="guestCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@36bc55de]" started-at="2022-10-24T20:59:08 CEST" name="guestCheckoutUsingDirectBankTransfer" finished-at="2022-10-24T20:59:18 CEST" duration-ms="9865" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- guestCheckoutUsingDirectBankTransfer -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@36bc55de]" started-at="2022-10-24T20:59:18 CEST" name="quitDriver" finished-at="2022-10-24T20:59:19 CEST" duration-ms="860" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@36bc55de]" started-at="2022-10-24T20:59:19 CEST" name="startDriver" finished-at="2022-10-24T20:59:22 CEST" duration-ms="2576" status="PASS">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@5c909414]" started-at="2022-10-26T22:08:11 CEST" name="startDriver" finished-at="2022-10-26T22:08:15 CEST" duration-ms="4342" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,61 +29,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="loginAndCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@36bc55de]" started-at="2022-10-24T20:59:22 CEST" name="loginAndCheckoutUsingDirectBankTransfer" finished-at="2022-10-24T20:59:33 CEST" duration-ms="11263" status="PASS">
+        <test-method signature="loginAndCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@5c909414]" started-at="2022-10-26T22:08:15 CEST" name="loginAndCheckoutUsingDirectBankTransfer" finished-at="2022-10-26T22:08:28 CEST" duration-ms="13063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndCheckoutUsingDirectBankTransfer -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@36bc55de]" started-at="2022-10-24T20:59:33 CEST" name="quitDriver" finished-at="2022-10-24T20:59:34 CEST" duration-ms="859" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-      </class> <!-- org.selenium.pom.tests.MyFirstTestCase -->
-    </test> <!-- Firefox -->
-  </suite> <!-- Suite1 (0) -->
-  <suite started-at="2022-10-24T20:58:44 CEST" name="Suite1" finished-at="2022-10-24T20:59:06 CEST" duration-ms="22201">
-    <groups>
-    </groups>
-    <test started-at="2022-10-24T20:58:44 CEST" name="Chrome" finished-at="2022-10-24T20:59:06 CEST" duration-ms="22201">
-      <class name="org.selenium.pom.tests.MyFirstTestCase">
-        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@7193666c]" started-at="2022-10-24T20:58:44 CEST" name="startDriver" finished-at="2022-10-24T20:58:46 CEST" duration-ms="2312" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[CHROME]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startDriver -->
-        <test-method signature="guestCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@7193666c]" started-at="2022-10-24T20:58:46 CEST" name="guestCheckoutUsingDirectBankTransfer" finished-at="2022-10-24T20:58:54 CEST" duration-ms="7930" status="PASS">
+        <test-method signature="guestCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@5c909414]" started-at="2022-10-26T22:08:15 CEST" name="guestCheckoutUsingDirectBankTransfer" finished-at="2022-10-26T22:08:29 CEST" duration-ms="13348" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guestCheckoutUsingDirectBankTransfer -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@7193666c]" started-at="2022-10-24T20:58:54 CEST" name="quitDriver" finished-at="2022-10-24T20:58:54 CEST" duration-ms="362" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@5c909414]" started-at="2022-10-26T22:08:28 CEST" name="quitDriver" finished-at="2022-10-26T22:08:29 CEST" duration-ms="962" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@7193666c]" started-at="2022-10-24T20:58:54 CEST" name="startDriver" finished-at="2022-10-24T20:58:55 CEST" duration-ms="830" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[CHROME]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startDriver -->
-        <test-method signature="loginAndCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@7193666c]" started-at="2022-10-24T20:58:55 CEST" name="loginAndCheckoutUsingDirectBankTransfer" finished-at="2022-10-24T20:59:05 CEST" duration-ms="10446" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginAndCheckoutUsingDirectBankTransfer -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@7193666c]" started-at="2022-10-24T20:59:05 CEST" name="quitDriver" finished-at="2022-10-24T20:59:06 CEST" duration-ms="286" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.MyFirstTestCase@5c909414]" started-at="2022-10-26T22:08:29 CEST" name="quitDriver" finished-at="2022-10-26T22:08:30 CEST" duration-ms="932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
       </class> <!-- org.selenium.pom.tests.MyFirstTestCase -->
-    </test> <!-- Chrome -->
-  </suite> <!-- Suite1 -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
 </testng-results>

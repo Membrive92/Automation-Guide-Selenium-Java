@@ -14,8 +14,7 @@ public class BaseTest {
 
     private void setDriver(WebDriver driver){
         this.driver.set(driver);
-        System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
-                "DRIVER = " + getDriver());
+
     }
 
     protected WebDriver getDriver(){
@@ -24,7 +23,10 @@ public class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void startDriver(String browser){
+        browser = System.getProperty("browser" , browser);
        setDriver(new DriverManager().initializerDriver(browser));
+        System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
+                "DRIVER = " + getDriver());
     }
 
     @AfterMethod
