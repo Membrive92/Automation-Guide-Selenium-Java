@@ -54,10 +54,10 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <!--     <parallel>methods</parallel>
-                    <threadCount>2</threadCount> -->
+                    <threadCount>2</threadCount>
                  <suiteXmlFiles>
                          <suiteXmlFile>${suiteFile}</suiteXmlFile>
-                     </suiteXmlFiles>
+                     </suiteXmlFiles>-->
                 </configuration>
             </plugin>
         </plugins>
