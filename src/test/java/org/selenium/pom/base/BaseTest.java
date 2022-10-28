@@ -1,7 +1,8 @@
 package org.selenium.pom.base;
 
-import org.junit.After;
-import org.junit.Before;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.selenium.pom.factory.DriverManager;
 
@@ -23,7 +24,7 @@ public class BaseTest {
     //public void startDriver(String browser){*/
 
 
-    @Before
+    @BeforeEach
     public void startDriver(){
       //  browser = System.getProperty("browser" , browser);
         String browser = System.getProperty("browser");
@@ -37,7 +38,7 @@ public class BaseTest {
     }
 
   //  @AfterMethod
-    @After
+    @AfterEach
     public void quitDriver() throws InterruptedException {
         //fix connection reset error
         Thread.sleep(100);

@@ -1,7 +1,9 @@
 package org.selenium.pom.tests;
 
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.selenium.pom.base.BaseTest;
 import org.selenium.pom.objects.BillingAddress;
 import org.selenium.pom.objects.Product;
@@ -17,7 +19,7 @@ import java.io.IOException;
 
 public class MyFirstTestCase extends BaseTest {
    // @Test
-    @Test
+   @Test
     public void guestCheckoutUsingDirectBankTransfer() throws IOException, InterruptedException {
       String searchFor = "blue";
       BillingAddress  billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
@@ -30,13 +32,13 @@ public class MyFirstTestCase extends BaseTest {
       storePage.isLoaded();
       storePage.search(searchFor);
       //  Assert.assertTrue(storePage.getSearchResultTitle().contains("Search results: "));
-        org.junit.Assert.assertEquals("Search results: “" + searchFor + "”" , storePage.getSearchResultTitle());
+        Assertions.assertEquals("Search results: “" + searchFor + "”", storePage.getSearchResultTitle());
         
         storePage.clickAddToCardBtn(product.getName());
         CartPage cartPage = storePage.clickViewCart();
         cartPage.isLoaded();
    //     Assert.assertEquals(cartPage.getProductName(), product.getName());
-        org.junit.Assert.assertEquals(product.getName() , cartPage.getProductName());
+        Assertions.assertEquals(product.getName(), cartPage.getProductName());
 
         CheckoutPage checkoutPage = cartPage.
                 checkout().
@@ -44,7 +46,7 @@ public class MyFirstTestCase extends BaseTest {
                 selectDirectBankTransfer().
                 placeOrder();
   //      Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
-        org.junit.Assert.assertEquals("Thank you. Your order has been received." , checkoutPage.getNotice());
+        Assertions.assertEquals("Thank you. Your order has been received.", checkoutPage.getNotice());
     }
 
   //  @Test
@@ -61,12 +63,12 @@ public class MyFirstTestCase extends BaseTest {
                 navigateToStoreUsingMenu().
                 search(searchFor);
       //  Assert.assertTrue(storePage.getSearchResultTitle().contains("Search results: "));
-        org.junit.Assert.assertEquals("Search results: “" + searchFor + "”" , storePage.getSearchResultTitle());
+        Assertions.assertEquals("Search results: “" + searchFor + "”", storePage.getSearchResultTitle());
 
         storePage.clickAddToCardBtn(product.getName());
         CartPage cartPage = storePage.clickViewCart();
       //  Assert.assertEquals(cartPage.getProductName(), (product.getName()));
-        org.junit.Assert.assertEquals(product.getName() , cartPage.getProductName());
+        Assertions.assertEquals(product.getName(), cartPage.getProductName());
 
         CheckoutPage checkoutPage = cartPage.checkout();
         checkoutPage.clickHereToLoginLink();
@@ -77,6 +79,6 @@ public class MyFirstTestCase extends BaseTest {
                    selectDirectBankTransfer().
                    placeOrder();
        // Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
-        org.junit.Assert.assertEquals("Thank you. Your order has been received." , checkoutPage.getNotice());
+        Assertions.assertEquals("Thank you. Your order has been received.", checkoutPage.getNotice());
     }
 }
