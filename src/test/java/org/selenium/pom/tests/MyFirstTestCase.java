@@ -11,7 +11,7 @@ import org.selenium.pom.pages.CheckoutPage;
 import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
 import org.selenium.pom.utils.JacksonUtils;
-import org.testng.Assert;
+
 
 import java.io.IOException;
 
