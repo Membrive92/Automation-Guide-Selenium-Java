@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.selenium.pom.constants.BrowserType;
+import org.selenium.pom.utils.ConfigLoader;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -30,12 +31,7 @@ public class DriverManager {
     }
 
     public WebDriver initializerDriverWithProps() throws IOException {
-        Properties props;
-        props = new Properties();
-        FileInputStream fis = new FileInputStream("src/test/resources/data.properties");
-
-        props.load(fis);
-        String browserName = props.getProperty("browser");
+        String browserName = ConfigLoader.getInstance().getBrowser();
 
         switch (browserName) {
             case "chrome" -> {

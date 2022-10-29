@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.selenium.pom.factory.DriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.sql.Driver;
@@ -21,8 +22,9 @@ public class BaseTest {
     }
     @Parameters("browser")
     @BeforeMethod
-    public void startDriver(String browser){
-       browser = System.getProperty("browser" , browser);
+    public void startDriver(@Optional String browser){
+       //browser = System.getProperty("browser" , browser);
+        if (browser == null) browser = "CHROME";
        setDriver(new DriverManager().initializerDriver(browser));
         System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
                 "DRIVER = " + getDriver());

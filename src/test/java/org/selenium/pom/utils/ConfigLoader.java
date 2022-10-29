@@ -10,7 +10,7 @@ public class ConfigLoader {
         properties = PropertyUtils.propertyLoader("src/test/resources/data.properties");
     }
 
-    public ConfigLoader getInstance(){
+    public static ConfigLoader getInstance(){
         if(configLoader == null){
             configLoader = new ConfigLoader();
 
