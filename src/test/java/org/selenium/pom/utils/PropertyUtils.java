@@ -1,4 +1,4 @@
-package org.selenium.pom.tests;
+package org.selenium.pom.utils;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
