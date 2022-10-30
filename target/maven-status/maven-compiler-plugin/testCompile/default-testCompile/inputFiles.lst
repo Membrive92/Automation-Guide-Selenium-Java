@@ -6,6 +6,9 @@ C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org
 C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\pages\StorePage.java
 C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\base\BaseTest.java
 C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\constants\BrowserType.java
+C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\utils\ConfigLoader.java
+C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\utils\PropertyUtils.java
+C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\constants\EnvType.java
 C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\pages\CartPage.java
 C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\base\BasePage.java
 C:\Users\membr\Desktop\Desarrollo\GuideAutojava\SeleniumJavaFK\src\test\java\org\selenium\pom\pages\CheckoutPage.java
