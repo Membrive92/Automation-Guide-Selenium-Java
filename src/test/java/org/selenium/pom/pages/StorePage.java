@@ -36,7 +36,7 @@ public class StorePage extends BasePage {
     }
 
     public String getSearchResultTitle(){
-        wait.until(ExpectedConditions.textToBe(searchResultTitle, "Search results: “blue”"));
+      //  wait.until(ExpectedConditions.textToBe(searchResultTitle, "Search results: “blue”"));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(searchResultTitle)).getText();
     }
 
