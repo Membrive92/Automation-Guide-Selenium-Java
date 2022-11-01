@@ -30,7 +30,7 @@ public class MyFirstTestCase extends BaseTest {
                 navigateToStoreUsingMenu();
       storePage.isLoaded();
       storePage.search(searchFor);
-        Assert.assertTrue(storePage.getSearchResultTitle().contains("Search results: "));
+        Assert.assertTrue(storePage.getSearchResultTitle(searchFor));
         
         storePage.clickAddToCardBtn(product.getName());
         CartPage cartPage = storePage.clickViewCart();
@@ -55,7 +55,7 @@ public class MyFirstTestCase extends BaseTest {
                 load().
                 navigateToStoreUsingMenu().
                 search(searchFor);
-       Assert.assertTrue(storePage.getSearchResultTitle().contains("Search results: "));
+       Assert.assertTrue(storePage.getSearchResultTitle(searchFor));
 
         storePage.clickAddToCardBtn(product.getName());
         CartPage cartPage = storePage.clickViewCart();

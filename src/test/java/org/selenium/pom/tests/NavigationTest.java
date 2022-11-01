@@ -13,6 +13,6 @@ public class NavigationTest extends BaseTest {
         StorePage storePage = new HomePage(getDriver()).
                 load().
                 navigateToStoreUsingMenu();
-        Assert.assertEquals(storePage.getSearchResultTitle(), "Store");
+        Assert.assertTrue(storePage.getSearchResultTitle("Store"));
     }
 }

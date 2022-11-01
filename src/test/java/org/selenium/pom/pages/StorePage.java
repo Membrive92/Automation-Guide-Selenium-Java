@@ -21,6 +21,11 @@ public class StorePage extends BasePage {
         return this;
     }
 
+    public StorePage load(){
+        load("/store");
+        return this;
+    }
+
     public Boolean isLoaded(){
         return wait.until(ExpectedConditions.urlContains("/store"));
     }
@@ -35,9 +40,10 @@ public class StorePage extends BasePage {
         return this;
     }
 
-    public String getSearchResultTitle(){
-      //  wait.until(ExpectedConditions.textToBe(searchResultTitle, "Search results: “blue”"));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(searchResultTitle)).getText();
+    public boolean getSearchResultTitle(String searchResult){
+
+      return  wait.until(ExpectedConditions.textToBePresentInElementLocated(searchResultTitle, searchResult));
+
     }
 
     private By getAddToCartBtnElement(String productName){
