@@ -53,18 +53,19 @@ public class SingUpApi {
 
     public Response register(User user){
         Cookies cookies = new Cookies();
-        Header header = new Header("Content-Type", "application/x-www-form-urlencoded");
+        Header header = new Header("content-type", "application/x-www-form-urlencoded");
         Headers headers = new Headers(header);
         HashMap<String, String> formParams = new HashMap<>();
         formParams.put("username", user.getUsername());
         formParams.put("email", user.getEmail());
+        formParams.put("password", user.getPassword());
         formParams.put("woocommerce-register-nonce", fetchRegisterNonceValueUsingJSoup());
         formParams.put("register", "Register");
 
         Response response = given().
                 baseUri(ConfigLoader.getInstance().getBaseUrl()).
                 headers(headers).
-                body(formParams).
+                formParams(formParams).
                 cookies(cookies).
                 log().all().
                 when().
@@ -76,6 +77,7 @@ public class SingUpApi {
         if (response.getStatusCode() != 302){
             throw new RuntimeException("Failed to register the account, HTTP Status Code: " + response.getStatusCode());
         }
+        this.cookies = response.getDetailedCookies();
         return response;
     }
 }
