@@ -2,6 +2,9 @@ package org.selenium.pom.api.actions;
 
 import io.restassured.http.Cookies;
 import io.restassured.response.Response;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.selenium.pom.utils.ConfigLoader;
 
 import static io.restassured.RestAssured.given;
@@ -13,9 +16,16 @@ public class SingUpApi {
         return cookies;
     }
 
-    public String fetchRegisterNonceValue(){
+    public String fetchRegisterNonceValueUsingGroovy(){
         Response response = getAccount();
        return response.htmlPath().getString("**.findAll { it.@name == 'woocommerce-register-nonce' }.@value");
+    }
+
+    public String fetchRegisterNonceValueUsingJSoup(){
+        Response response = getAccount();
+        Document doc = Jsoup.parse(response.body().prettyPrint());
+        Element element = doc.selectFirst("#woocommerce-register-nonce");
+        return element.attr("value");
     }
 
     public Response getAccount(){
