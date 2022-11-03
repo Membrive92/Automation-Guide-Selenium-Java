@@ -13,6 +13,11 @@ public class SingUpApi {
         return cookies;
     }
 
+    public String fetchRegisterNonceValue(){
+        Response response = getAccount();
+       return response.htmlPath().getString("**.findAll { it.@name == 'woocommerce-register-nonce' }.@value");
+    }
+
     public Response getAccount(){
         Cookies cookies = new Cookies();
         Response response = given().
