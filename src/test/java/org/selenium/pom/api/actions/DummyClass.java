@@ -12,7 +12,11 @@ public class DummyClass {
                 setPassword("apiuserpass").
                 setEmail(username + "@memb.com");
         SingUpApi signUpApi = new SingUpApi();
-        System.out.println(signUpApi.register(user));
-        System.out.println(signUpApi.getCookies());
+        signUpApi.register(user);
+        System.out.println("REGISTER COOKIES " + signUpApi.getCookies());
+        CartApi cartApi = new CartApi(signUpApi.getCookies());
+        cartApi.addToCart(1215,1);
+        System.out.println("CART COOKIES " + cartApi.getCookies());
+
     }
 }
