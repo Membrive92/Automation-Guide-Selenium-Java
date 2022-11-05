@@ -65,7 +65,7 @@ public class MyFirstTestCase extends BaseTest {
         checkoutPage.clickHereToLoginLink();
 
            checkoutPage.
-                   login(user.getUsername(), user.getPassword()).
+                   login(user).
                    setBillingAddress(billingAddress).
                    selectDirectBankTransfer().
                    placeOrder();

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.selenium.pom.base.BasePage;
 import org.selenium.pom.objects.BillingAddress;
+import org.selenium.pom.objects.User;
 
 import java.time.Duration;
 import java.util.List;
@@ -33,8 +34,15 @@ public class CheckoutPage extends BasePage {
     private final By alternateStateDropDown = By.id("select2-billing_state-container");
     private final By directBankTransferRadioBtn = By.id("payment_method_bacs");
 
+    private final By productName = By.cssSelector("td[class='product-name']");
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
+    }
+
+    public CheckoutPage load(){
+        load("/checkout/");
+        return this;
     }
 
     public CheckoutPage enterFirstName(String firstName){
@@ -147,10 +155,10 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public CheckoutPage login(String username, String password){
-        return enterUserName(username)
-                .enterPassword(password)
-                .clickLoginBtn();
+    public CheckoutPage login(User user){
+        return enterUserName(user.getUsername()).
+                enterPassword(user.getPassword()).
+                clickLoginBtn();
     }
 
     public CheckoutPage selectDirectBankTransfer(){
@@ -159,6 +167,10 @@ public class CheckoutPage extends BasePage {
             elementVisible.click();
         }
         return this;
+    }
+
+    public String getProductName(){
+       return wait.until(ExpectedConditions.visibilityOfElementLocated(productName)).getText();
     }
 
     public CheckoutPage setBillingAddress (BillingAddress billingAddress){
