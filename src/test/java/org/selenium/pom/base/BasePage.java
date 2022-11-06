@@ -16,7 +16,7 @@ public class BasePage {
 
     public BasePage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(100));
     }
     public void load(String endPoint){
         driver.get(ConfigLoader.getInstance().getBaseUrl() + endPoint);

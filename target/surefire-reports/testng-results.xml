@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-06T18:16:15 CET" name="Surefire suite" finished-at="2022-11-06T18:18:23 CET" duration-ms="127469">
+    <groups>
+    </groups>
+    <test started-at="2022-11-06T18:16:15 CET" name="Surefire test" finished-at="2022-11-06T18:18:23 CET" duration-ms="127469">
+      <class name="org.selenium.pom.tests.NavigationTest">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.NavigationTest@70e8f8e]" started-at="2022-11-06T18:16:16 CET" name="startDriver" finished-at="2022-11-06T18:16:23 CET" duration-ms="7222" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method signature="NavigateFromHomeToStoreUsingMainMenu()[pri:0, instance:org.selenium.pom.tests.NavigationTest@70e8f8e]" started-at="2022-11-06T18:16:23 CET" name="NavigateFromHomeToStoreUsingMainMenu" finished-at="2022-11-06T18:16:35 CET" duration-ms="12538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateFromHomeToStoreUsingMainMenu -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.NavigationTest@70e8f8e]" started-at="2022-11-06T18:16:35 CET" name="quitDriver" finished-at="2022-11-06T18:16:36 CET" duration-ms="801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- org.selenium.pom.tests.NavigationTest -->
+      <class name="org.selenium.pom.tests.CheckoutTest">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.CheckoutTest@1622f1b]" started-at="2022-11-06T18:16:16 CET" name="startDriver" finished-at="2022-11-06T18:16:23 CET" duration-ms="7606" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.CheckoutTest@1622f1b]" started-at="2022-11-06T18:16:16 CET" name="startDriver" finished-at="2022-11-06T18:16:28 CET" duration-ms="12163" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method signature="LoginAndCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.CheckoutTest@1622f1b]" started-at="2022-11-06T18:16:23 CET" name="LoginAndCheckoutUsingDirectBankTransfer" finished-at="2022-11-06T18:18:14 CET" duration-ms="110640" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //li[text()='Greece'] (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 106.0.5, moz:accessibilityChecks: false, moz:buildID: 20221104133228, moz:debuggerAddress: 127.0.0.1:21557, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 29248, moz:profile: C:\Users\membr\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:21557/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 79ceab70-5c09-42a5-862a-5fad5c118e62]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //li[text()='Greece'] (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 106.0.5, moz:accessibilityChecks: false, moz:buildID: 20221104133228, moz:debuggerAddress: 127.0.0.1:21557, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 29248, moz:profile: C:\Users\membr\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:21557/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 79ceab70-5c09-42a5-862a-5fad5c118e62
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at org.selenium.pom.pages.CheckoutPage.selectCountry(CheckoutPage.java:72)
+at org.selenium.pom.pages.CheckoutPage.setBillingAddress(CheckoutPage.java:179)
+at org.selenium.pom.tests.CheckoutTest.LoginAndCheckoutUsingDirectBankTransfer(CheckoutTest.java:52)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginAndCheckoutUsingDirectBankTransfer -->
+        <test-method signature="GuestCheckoutUsingDirectBankTransfer()[pri:0, instance:org.selenium.pom.tests.CheckoutTest@1622f1b]" started-at="2022-11-06T18:16:28 CET" name="GuestCheckoutUsingDirectBankTransfer" finished-at="2022-11-06T18:16:37 CET" duration-ms="9399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GuestCheckoutUsingDirectBankTransfer -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.CheckoutTest@1622f1b]" started-at="2022-11-06T18:16:37 CET" name="quitDriver" finished-at="2022-11-06T18:16:38 CET" duration-ms="795" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.CheckoutTest@1622f1b]" started-at="2022-11-06T18:18:14 CET" name="quitDriver" finished-at="2022-11-06T18:18:15 CET" duration-ms="794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- org.selenium.pom.tests.CheckoutTest -->
+      <class name="org.selenium.pom.tests.SearchTest">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.SearchTest@17046283]" started-at="2022-11-06T18:16:16 CET" name="startDriver" finished-at="2022-11-06T18:16:24 CET" duration-ms="8129" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method signature="searchWithPartialMatch()[pri:0, instance:org.selenium.pom.tests.SearchTest@17046283]" started-at="2022-11-06T18:16:24 CET" name="searchWithPartialMatch" finished-at="2022-11-06T18:16:33 CET" duration-ms="9457" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchWithPartialMatch -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.SearchTest@17046283]" started-at="2022-11-06T18:16:33 CET" name="quitDriver" finished-at="2022-11-06T18:16:34 CET" duration-ms="962" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- org.selenium.pom.tests.SearchTest -->
+      <class name="org.selenium.pom.tests.AddToCartTest">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.AddToCartTest@3e92efc3]" started-at="2022-11-06T18:16:16 CET" name="startDriver" finished-at="2022-11-06T18:16:27 CET" duration-ms="11695" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method signature="addToCartFromStorePage()[pri:0, instance:org.selenium.pom.tests.AddToCartTest@3e92efc3]" started-at="2022-11-06T18:16:27 CET" name="addToCartFromStorePage" finished-at="2022-11-06T18:18:22 CET" duration-ms="115105" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.cssSelector: a[title='View cart'] (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 106.0.5, moz:accessibilityChecks: false, moz:buildID: 20221104133228, moz:debuggerAddress: 127.0.0.1:30988, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 33452, moz:profile: C:\Users\membr\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:30988/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 392885c3-640d-4f73-90d8-ee1e999fdf8f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: a[title='View cart'] (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 106.0.5, moz:accessibilityChecks: false, moz:buildID: 20221104133228, moz:debuggerAddress: 127.0.0.1:30988, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 33452, moz:profile: C:\Users\membr\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:30988/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 392885c3-640d-4f73-90d8-ee1e999fdf8f
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at org.selenium.pom.pages.StorePage.clickViewCart(StorePage.java:60)
+at org.selenium.pom.tests.AddToCartTest.addToCartFromStorePage(AddToCartTest.java:21)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCartFromStorePage -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.AddToCartTest@3e92efc3]" started-at="2022-11-06T18:18:22 CET" name="quitDriver" finished-at="2022-11-06T18:18:23 CET" duration-ms="619" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- org.selenium.pom.tests.AddToCartTest -->
+      <class name="org.selenium.pom.tests.LoginTest">
+        <test-method is-config="true" signature="startDriver(java.lang.String)[pri:0, instance:org.selenium.pom.tests.LoginTest@72a7c7e0]" started-at="2022-11-06T18:16:16 CET" name="startDriver" finished-at="2022-11-06T18:16:25 CET" duration-ms="9351" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method signature="loginDuringCheckout()[pri:0, instance:org.selenium.pom.tests.LoginTest@72a7c7e0]" started-at="2022-11-06T18:16:25 CET" name="loginDuringCheckout" finished-at="2022-11-06T18:16:32 CET" duration-ms="7363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginDuringCheckout -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:org.selenium.pom.tests.LoginTest@72a7c7e0]" started-at="2022-11-06T18:16:32 CET" name="quitDriver" finished-at="2022-11-06T18:16:33 CET" duration-ms="847" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- org.selenium.pom.tests.LoginTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
