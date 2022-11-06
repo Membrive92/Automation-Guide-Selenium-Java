@@ -74,7 +74,7 @@ public class SingUpApi {
                 log().all().
                 extract().
                 response();
-        if (response.getStatusCode() != 302){
+        if (response.getStatusCode() != 200){
             throw new RuntimeException("Failed to register the account, HTTP Status Code: " + response.getStatusCode());
         }
         this.cookies = response.getDetailedCookies();

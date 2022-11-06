@@ -6,6 +6,7 @@ import org.selenium.pom.base.BaseTest;
 import org.selenium.pom.objects.BillingAddress;
 import org.selenium.pom.objects.User;
 import org.selenium.pom.pages.CheckoutPage;
+import org.selenium.pom.utils.ConfigLoader;
 import org.selenium.pom.utils.FakerUtils;
 import org.selenium.pom.utils.JacksonUtils;
 import org.testng.Assert;
@@ -34,11 +35,11 @@ public class CheckoutTest extends BaseTest {
     @Test
     public void LoginAndCheckoutUsingDirectBankTransfer() throws IOException {
         BillingAddress billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
-        String username = "apiuser" + new FakerUtils().generateRandomNumber();
+        String username = ConfigLoader.getInstance().getUsername() + new FakerUtils().generateRandomNumber();
         User user = new User().
                 setUsername(username).
-                setPassword("apiuserpass").
-                setEmail(username + "@memb.com");
+                setPassword(ConfigLoader.getInstance().getPassword()).
+                setEmail(ConfigLoader.getInstance().getEmail());
 
         SingUpApi signUpApi = new SingUpApi();
         signUpApi.register(user);

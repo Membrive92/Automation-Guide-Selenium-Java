@@ -47,4 +47,10 @@ public class ConfigLoader {
         if(prop != null) return prop;
         else throw  new RuntimeException("property browser is not specified in te stage_enviroment.properties file");
     }
+
+    public String getEmail(){
+        String prop = properties.getProperty("email");
+        if(prop != null) return prop;
+        else throw  new RuntimeException("property email is not specified in te stage_enviroment.properties file");
+    }
 }
