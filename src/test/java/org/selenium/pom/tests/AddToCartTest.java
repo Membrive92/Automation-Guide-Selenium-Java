@@ -33,7 +33,7 @@ public class AddToCartTest extends BaseTest {
         Assert.assertEquals(cartPage.getProductName(), product.getName());
     }
 
-    @DataProvider(name = "getFeaturedProducts")
+    @DataProvider(name = "getFeaturedProducts", parallel = true)
     public Product[] getFeaturedProducts() throws IOException {
         return JacksonUtils.deserializeJson("products.json", Product[].class);
     }
