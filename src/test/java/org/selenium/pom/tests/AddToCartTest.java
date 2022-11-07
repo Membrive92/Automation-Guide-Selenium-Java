@@ -2,6 +2,7 @@ package org.selenium.pom.tests;
 
 
 import org.selenium.pom.base.BaseTest;
+import org.selenium.pom.dataproviders.DataProviders;
 import org.selenium.pom.objects.Product;
 import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.HomePage;
@@ -25,16 +26,11 @@ public class AddToCartTest extends BaseTest {
         Assert.assertEquals(cartPage.getProductName(), (product.getName()));
     }
 
-    @Test(dataProvider = "getFeaturedProducts")
+    @Test(dataProvider = "getFeaturedProducts", dataProviderClass = DataProviders.class)
     public void addToCartFeaturedProducts(Product product){
         CartPage cartPage = new HomePage(getDriver()).load().
                 clickAddToCardBtn(product.getName()).
                 clickViewCart();
         Assert.assertEquals(cartPage.getProductName(), product.getName());
-    }
-
-    @DataProvider(name = "getFeaturedProducts", parallel = true)
-    public Product[] getFeaturedProducts() throws IOException {
-        return JacksonUtils.deserializeJson("products.json", Product[].class);
     }
 }
