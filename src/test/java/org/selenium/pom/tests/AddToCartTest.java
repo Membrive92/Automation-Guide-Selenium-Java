@@ -4,6 +4,7 @@ package org.selenium.pom.tests;
 import org.selenium.pom.base.BaseTest;
 import org.selenium.pom.objects.Product;
 import org.selenium.pom.pages.CartPage;
+import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,5 +21,13 @@ public class AddToCartTest extends BaseTest {
                 clickAddToCardBtn(product.getName()).
                 clickViewCart();
         Assert.assertEquals(cartPage.getProductName(), (product.getName()));
+    }
+
+    @Test
+    public void addToCartFeaturedProducts(){
+        CartPage cartPage = new HomePage(getDriver()).load().
+                clickAddToCardBtn("Blue Shoes").
+                clickViewCart();
+        Assert.assertEquals(cartPage.getProductName(), "Blue Shoes");
     }
 }
