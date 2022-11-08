@@ -2,7 +2,7 @@
 
 <suite name="Suite1" verbose="1" thread-count="2" parallel="tests" >
     <test name="Chrome" thread-count="12" parallel="methods" >
-        <parameter name="browser"  value="FIREFOX"/>
+        <parameter name="browser"  value="CHROME"/>
         <packages>
             <package name="org.selenium.pom.tests"/>
         </packages>

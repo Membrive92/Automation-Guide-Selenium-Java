@@ -20,8 +20,8 @@ public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
         super(driver);
-        new MyHeader(driver);
-        new ProductThumbnail(driver);
+        myHeader = new MyHeader(driver);
+        productThumbnail = new ProductThumbnail(driver);
     }
 
     public HomePage load(){

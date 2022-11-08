@@ -27,8 +27,8 @@ public class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void startDriver(@Optional String browser){
-       //browser = System.getProperty("browser" , browser);
-        if (browser == null) browser = "CHROME";
+       browser = System.getProperty("browser" , browser);
+       // if (browser == null) browser = "CHROME";
        setDriver(new DriverManager().initializerDriver(browser));
         System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
                 "DRIVER = " + getDriver());

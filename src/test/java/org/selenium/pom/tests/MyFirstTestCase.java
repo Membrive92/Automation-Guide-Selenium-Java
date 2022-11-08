@@ -26,16 +26,15 @@ public class MyFirstTestCase extends BaseTest {
       Product product = new Product(1215);
 
       StorePage storePage = new HomePage(getDriver()).
-                load().
-                navigateToStoreUsingMenu();
-      storePage.isLoaded();
-      storePage.search(searchFor);
+              load().getMyHeader().
+              navigateToStoreUsingMenu().
+              search(searchFor);
         Assert.assertTrue(storePage.getSearchResultTitle(searchFor));
         
-        storePage.clickAddToCardBtn(product.getName());
-        CartPage cartPage = storePage.clickViewCart();
-        cartPage.isLoaded();
-       Assert.assertEquals(cartPage.getProductName(), product.getName());
+        storePage.getProductThumbnail().clickAddToCardBtn(product.getName());
+        CartPage cartPage = storePage.getProductThumbnail().clickViewCart();
+        Assert.assertEquals(cartPage.getProductName(), product.getName());
+
         CheckoutPage checkoutPage = cartPage.
                 checkout().
                 setBillingAddress(billingAddress).
@@ -52,14 +51,14 @@ public class MyFirstTestCase extends BaseTest {
         User user = new User(ConfigLoader.getInstance().getUsername(),ConfigLoader.getInstance().getPassword());
 
         StorePage storePage = new HomePage(getDriver()).
-                load().
+                load().getMyHeader().
                 navigateToStoreUsingMenu().
                 search(searchFor);
-       Assert.assertTrue(storePage.getSearchResultTitle(searchFor));
+        Assert.assertTrue(storePage.getSearchResultTitle(searchFor));
 
-        storePage.clickAddToCardBtn(product.getName());
-        CartPage cartPage = storePage.clickViewCart();
-        Assert.assertEquals(cartPage.getProductName(), (product.getName()));
+        storePage.getProductThumbnail().clickAddToCardBtn(product.getName());
+        CartPage cartPage = storePage.getProductThumbnail().clickViewCart();
+        Assert.assertEquals(cartPage.getProductName(), product.getName());
 
         CheckoutPage checkoutPage = cartPage.checkout();
         checkoutPage.clickHereToLoginLink();
