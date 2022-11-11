@@ -26,7 +26,7 @@ public class BaseTest {
     }
     @Parameters("browser")
     @BeforeMethod
-    public void startDriver(@Optional String browser){
+    public synchronized void startDriver(@Optional String browser){
        browser = System.getProperty("browser" , browser);
        // if (browser == null) browser = "CHROME";
        setDriver(new DriverManager().initializerDriver(browser));
@@ -35,9 +35,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void quitDriver() throws InterruptedException {
-        //fix connection reset error
-        Thread.sleep(100);
+    public synchronized void quitDriver() throws InterruptedException {
        System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
                 "DRIVER = " + getDriver());
         getDriver().quit();
