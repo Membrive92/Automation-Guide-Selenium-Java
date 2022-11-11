@@ -1,9 +1,6 @@
 package org.selenium.pom.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -155,10 +152,15 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    private CheckoutPage waitForLoginBtnToDisappear(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(loginBtn));
+        return this;
+    }
+
     public CheckoutPage login(User user){
         return enterUserName(user.getUsername()).
                 enterPassword(user.getPassword()).
-                clickLoginBtn();
+                clickLoginBtn().waitForLoginBtnToDisappear();
     }
 
     public CheckoutPage selectDirectBankTransfer(){
@@ -169,8 +171,18 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public String getProductName(){
-       return wait.until(ExpectedConditions.visibilityOfElementLocated(productName)).getText();
+    public String getProductName() throws Exception {
+        int i = 5;
+        while (i > 0){
+            try {
+                return wait.until(ExpectedConditions.visibilityOfElementLocated(productName)).getText();
+            } catch (StaleElementReferenceException e){
+                System.out.println("NOT FOUND. TRYING AGAIN " + e);
+            }
+            Thread.sleep(5000);
+            i--;
+        }
+       throw  new Exception("Element not found");
     }
 
     public CheckoutPage setBillingAddress (BillingAddress billingAddress){

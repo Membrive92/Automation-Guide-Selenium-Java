@@ -36,6 +36,7 @@ public class BaseTest {
 
     @AfterMethod
     public synchronized void quitDriver() throws InterruptedException {
+       Thread.sleep(300);
        System.out.println("CURRENT THREAD: " + Thread.currentThread().getId() + ", " +
                 "DRIVER = " + getDriver());
         getDriver().quit();
