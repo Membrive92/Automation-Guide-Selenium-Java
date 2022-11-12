@@ -1,4 +1,4 @@
-package org.selenium.pom.factory;
+package org.selenium.pom.factory.interfaceFactory;
 
 import org.selenium.pom.constants.BrowserType;
 
