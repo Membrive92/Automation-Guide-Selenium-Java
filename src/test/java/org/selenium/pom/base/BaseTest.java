@@ -3,6 +3,7 @@ package org.selenium.pom.base;
 
 
 import io.restassured.http.Cookies;
+import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
@@ -17,7 +18,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategy;
 
+import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -73,7 +79,8 @@ public class BaseTest {
             File destinationFile = new File("src/test/resources/screenshots" + File.separator+ browser + File.separator +
                     result.getTestClass().getRealClass().getSimpleName() + "_" + result.getMethod().getMethodName() +
                     ".png");
-            takeScreenshot(destinationFile);
+           // takeScreenshot(destinationFile);
+            takeScreenshotUsingAshot(destinationFile);
         }
         getDriverManager().getDriver().quit();
     }
@@ -90,5 +97,16 @@ public class BaseTest {
         TakesScreenshot takesScreenshot = (TakesScreenshot) getDriver();
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(sourceFile, destinationFile);
+    }
+
+    private void takeScreenshotUsingAshot(File destinationFile){
+        Screenshot screenshot = new AShot()
+               .shootingStrategy(ShootingStrategies.viewportPasting(100))
+               .takeScreenshot(getDriver());
+        try {
+            ImageIO.write(screenshot.getImage(), "PNG", destinationFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
