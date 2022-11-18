@@ -1,6 +1,7 @@
 package org.selenium.pom.tests;
 
 
+import io.qameta.allure.Description;
 import org.selenium.pom.base.BaseTest;
 import org.selenium.pom.dataproviders.DataProviders;
 import org.selenium.pom.objects.Product;
@@ -16,6 +17,7 @@ import java.io.IOException;
 
 public class AddToCartTest extends BaseTest {
 
+    @Description("Atomic test: Adding a product from store page and the assert fail")
     @Test(description = "Add to cart from store page a product and it will fail")
     public void addToCartFromStorePage() throws IOException {
         Product product = new Product(1215);

@@ -1,5 +1,6 @@
 package org.selenium.pom.tests;
 
+import io.qameta.allure.Description;
 import org.selenium.pom.api.actions.CartApi;
 import org.selenium.pom.api.actions.SingUpApi;
 import org.selenium.pom.base.BaseTest;
@@ -16,6 +17,7 @@ import java.io.IOException;
 
 public class CheckoutTest extends BaseTest {
 
+    @Description("Atomic test: adding description ")
     @Test(description = "Checkout process obtain a product as Guest")
     public void GuestCheckoutUsingDirectBankTransfer() throws IOException {
         BillingAddress billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
@@ -32,6 +34,7 @@ public class CheckoutTest extends BaseTest {
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
     }
 
+    @Description("Atomic test: adding description ")
     @Test(description = "Checkout process obtain a product as logged user")
     public void LoginAndCheckoutUsingDirectBankTransfer() throws IOException {
         BillingAddress billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);

@@ -1,5 +1,6 @@
 package org.selenium.pom.tests;
 
+import io.qameta.allure.Description;
 import org.selenium.pom.api.actions.CartApi;
 import org.selenium.pom.api.actions.SingUpApi;
 import org.selenium.pom.base.BaseTest;
@@ -15,6 +16,7 @@ import java.io.IOException;
 
 public class LoginTest extends BaseTest {
 
+    @Description("Atomic test: adding description ")
     @Test(description = "Login during checkout process Api way")
     public void loginDuringCheckout() throws Exception {
         String username = ConfigLoader.getInstance().getUsername() + new FakerUtils().generateRandomNumber();
