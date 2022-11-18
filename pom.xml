@@ -7,8 +7,49 @@
     <groupId>org.example</groupId>
     <artifactId>SeleniumJavaFK</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <suiteFile>testng.xml</suiteFile>
+        <aspectj.version>1.8.10</aspectj.version>
+    </properties>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>6</threadCount>
+                    <!--                      <suiteXmlFiles>-->
+                    <!--                              <suiteXmlFile>${suiteFile}</suiteXmlFile>-->
+                    <!--                          </suiteXmlFiles>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 <dependencies>
+
+
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectj.version}</version>
+    </dependency>
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
@@ -51,28 +92,10 @@
         <artifactId>ashot</artifactId>
         <version>1.5.4</version>
     </dependency>
-
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-testng</artifactId>
+        <version>2.20.0</version>
+    </dependency>
 </dependencies>
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <suiteFile>testng.xml</suiteFile>
-    </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
-                <configuration>
-                     <parallel>methods</parallel>
-                    <threadCount>6</threadCount>
-<!--                      <suiteXmlFiles>-->
-<!--                              <suiteXmlFile>${suiteFile}</suiteXmlFile>-->
-<!--                          </suiteXmlFiles>-->
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
