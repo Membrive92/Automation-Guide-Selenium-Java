@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class SearchTest extends BaseTest {
 
-    @Test
+    @Test(description = "Searching Blue in a filter")
     public void searchWithPartialMatch(){
         String searchFor= "Search results: ”Blue”";
         StorePage storePage = new StorePage(getDriver())

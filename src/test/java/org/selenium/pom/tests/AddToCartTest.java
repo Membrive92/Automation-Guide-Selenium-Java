@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class AddToCartTest extends BaseTest {
 
-    @Test
+    @Test(description = "Add to cart from store page a product and it will fail")
     public void addToCartFromStorePage() throws IOException {
         Product product = new Product(1215);
         CartPage cartPage = new StorePage(getDriver()).load().

@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class CheckoutTest extends BaseTest {
 
-    @Test
+    @Test(description = "Checkout process obtain a product as Guest")
     public void GuestCheckoutUsingDirectBankTransfer() throws IOException {
         BillingAddress billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
         CheckoutPage checkoutPage = new CheckoutPage(getDriver()).load();
@@ -32,7 +32,7 @@ public class CheckoutTest extends BaseTest {
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
     }
 
-    @Test
+    @Test(description = "Checkout process obtain a product as logged user")
     public void LoginAndCheckoutUsingDirectBankTransfer() throws IOException {
         BillingAddress billingAddress = JacksonUtils.deserializeJson("myBillingAddress.json", BillingAddress.class);
         String username = ConfigLoader.getInstance().getUsername() + new FakerUtils().generateRandomNumber();

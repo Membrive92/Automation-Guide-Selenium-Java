@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class NavigationTest extends BaseTest {
 
-    @Test
+    @Test(description = "Using main menu to navigate to store page")
     public void NavigateFromHomeToStoreUsingMainMenu(){
         StorePage storePage = new HomePage(getDriver()).
                 load().getMyHeader().

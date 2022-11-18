@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(description = "Login during checkout process Api way")
     public void loginDuringCheckout() throws Exception {
         String username = ConfigLoader.getInstance().getUsername() + new FakerUtils().generateRandomNumber();
         User user = new User().
