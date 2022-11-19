@@ -1,5 +1,6 @@
 package org.selenium.pom.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.selenium.pom.base.BasePage;
@@ -24,6 +25,7 @@ public class HomePage extends BasePage {
         productThumbnail = new ProductThumbnail(driver);
     }
 
+    @Step("Load home page")
     public HomePage load(){
         load("/");
         wait.until(ExpectedConditions.titleContains("AskOmDch"));

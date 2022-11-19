@@ -1,6 +1,6 @@
 package org.selenium.pom.tests;
 
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 import org.selenium.pom.api.actions.CartApi;
 import org.selenium.pom.api.actions.SingUpApi;
 import org.selenium.pom.base.BaseTest;
@@ -15,8 +15,15 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+@Epic("Shopping")
+@Feature("Adding to Checkout")
 public class CheckoutTest extends BaseTest {
 
+    @Story("Guest CHeckoout")
+    @Link("https://example.org")
+    @Link(name = "allure", type = "mylink")
+    @TmsLink("tmslinkCheckout")
+    @Issue("Issue: 2334 checkout")
     @Description("Atomic test: adding description ")
     @Test(description = "Checkout process obtain a product as Guest")
     public void GuestCheckoutUsingDirectBankTransfer() throws IOException {
@@ -34,6 +41,11 @@ public class CheckoutTest extends BaseTest {
         Assert.assertEquals(checkoutPage.getNotice(), "Thank you. Your order has been received.");
     }
 
+    @Story("Login CHeckoout")
+    @Link("https://example.org")
+    @Link(name = "allure", type = "mylink")
+    @TmsLink("tmslinkLogin")
+    @Issue("Issue: 2334 Login")
     @Description("Atomic test: adding description ")
     @Test(description = "Checkout process obtain a product as logged user")
     public void LoginAndCheckoutUsingDirectBankTransfer() throws IOException {

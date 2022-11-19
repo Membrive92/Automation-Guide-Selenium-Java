@@ -1,5 +1,6 @@
 package org.selenium.pom.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,14 +25,17 @@ public class CartPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Check if a text is present")
     public Boolean isLoaded(){
        return wait.until(ExpectedConditions.textToBePresentInElement(cartHeading, "Cart"));
     }
 
+    @Step("Obtain a product Name")
     public String getProductName(){
         return wait.until(ExpectedConditions.visibilityOf(productName)).getText();
     }
 
+    @Step("go to Checkout page")
     public CheckoutPage checkout(){
         wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
         return new CheckoutPage(driver);

@@ -1,5 +1,6 @@
 package org.selenium.pom.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -115,6 +116,8 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+
+    @Step("Click on place order btn")
     public CheckoutPage placeOrder (){
        waitForOverlaysToDisappear(overlay);
        driver.findElement(placeOrderBtn).click();
@@ -146,6 +149,7 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    @Step("Click on login btn")
     public CheckoutPage clickLoginBtn(){
         WebElement elementVisible = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
         elementVisible.click();
@@ -157,12 +161,14 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    @Step("Login in the web")
     public CheckoutPage login(User user){
         return enterUserName(user.getUsername()).
                 enterPassword(user.getPassword()).
                 clickLoginBtn().waitForLoginBtnToDisappear();
     }
 
+    @Step("Select direct bank transfer method")
     public CheckoutPage selectDirectBankTransfer(){
         WebElement elementVisible = wait.until(ExpectedConditions.elementToBeClickable(directBankTransferRadioBtn));
         if (!elementVisible.isSelected()){
@@ -185,6 +191,7 @@ public class CheckoutPage extends BasePage {
        throw  new Exception("Element not found");
     }
 
+    @Step
     public CheckoutPage setBillingAddress (BillingAddress billingAddress){
        return enterFirstName(billingAddress.getFirstName()).
                enterLastName(billingAddress.getLastName()).
