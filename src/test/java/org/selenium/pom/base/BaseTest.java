@@ -2,6 +2,7 @@ package org.selenium.pom.base;
 
 
 
+import io.qameta.allure.Attachment;
 import io.restassured.http.Cookies;
 import org.apache.commons.exec.ExecuteException;
 import org.apache.commons.io.FileUtils;
@@ -81,6 +82,7 @@ public class BaseTest {
                     ".png");
            // takeScreenshot(destinationFile);
             takeScreenshotUsingAshot(destinationFile);
+            saveScreenshot(getDriver());
         }
         getDriverManager().getDriver().quit();
     }
@@ -108,5 +110,11 @@ public class BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] saveScreenshot(WebDriver driver) {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) getDriver();
+        return takesScreenshot.getScreenshotAs(OutputType.BYTES);
     }
 }
