@@ -7,7 +7,11 @@ Bad practice that are fix:
 - Hardcoded test data  -  Constants/Enums
 - Hardcoded static Text  - XMLs and props files
 - Hardcoded driver executable path
+<<<<<<< HEAD
 - Code duplication - Page object model
+=======
+- Code duplication - Page object model 
+>>>>>>> e68de24c9d1387d5850f7f619f5c62fe5c62bb17
 - Non-Atomic test   -  create atomic tests
 - Non-readable test - Use builder pattern
 - Duplicate steps tests - discrete tests
@@ -33,7 +37,15 @@ Dependencies used in framework:
 
 
 Launching tests:
+<<<<<<< HEAD
 - Java requiered
 - Maven required
 - "maven clean tests" on root directori in a terminal
 - Executing testng.xml for launching tests with the configuration write in this file
+=======
+-Java requiered
+-Maven required
+- "maven clean tests" on root directori in a terminal
+- Executing testng.xml for launching tests with the configuration write in this file
+
+>>>>>>> e68de24c9d1387d5850f7f619f5c62fe5c62bb17
