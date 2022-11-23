@@ -12,7 +12,6 @@ import org.selenium.pom.utils.FakerUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 @Epic("Shopping")
 @Feature("Login")
 public class LoginTest extends BaseTest {
