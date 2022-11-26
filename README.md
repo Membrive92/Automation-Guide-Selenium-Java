@@ -33,7 +33,7 @@ Dependencies used in framework:
 
 
 Launching tests:
-- Java requiered
+- Java required
 - Maven required
-- "maven clean tests" on root directori in a terminal
+- "maven clean tests" on root directory in a terminal
 - Executing testng.xml for launching tests with the configuration write in this file

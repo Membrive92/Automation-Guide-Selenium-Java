@@ -8,6 +8,7 @@ import org.selenium.pom.objects.Product;
 import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
+import org.selenium.pom.pages.WomenPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -39,5 +40,20 @@ public class AddToCartTest extends BaseTest {
                 clickAddToCardBtn(product.getName()).
                 clickViewCart();
         Assert.assertEquals(cartPage.getProductName(), product.getName());
+    }
+
+    @Story("Adding to cart a product with dynamic xpath")
+    @Link("https://example.org")
+    @Link(name = "allure", type = "mylink")
+    @TmsLink("tmslink1232")
+    @Issue("Issue: 23344")
+    @Description("Atomic test: Adding a product from women page and the assert fail")
+    @Test(description = "Add to cart from women page a product using dynamic method")
+    public void addToCartFromWomenPage() {
+        CartPage cartPage = new WomenPage(getDriver()).load().
+                clickDynamicProductBtn("1198").
+                getProductThumbnail().
+                clickViewCart();
+        Assert.assertEquals(cartPage.getProductName(), ("Anchor Bracelet"));
     }
 }
